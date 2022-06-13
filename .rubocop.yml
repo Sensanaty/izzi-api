@@ -3,3 +3,6 @@ AllCops:
   Exclude:
     - 'bin/**/*'
     - 'config/application.rb'
+    - 'db/schema.rb'
+Metrics/BlockLength:
+  IgnoredMethods: [ 'describe', 'context' ]
