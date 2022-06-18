@@ -10,4 +10,7 @@ Metrics/BlockLength:
     - 'db/seeds.rb'
 Style/Documentation:
   Exclude:
-    - 'app/controllers/*'
+    - 'app/controllers/**/*'
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'app/views/**/*'
