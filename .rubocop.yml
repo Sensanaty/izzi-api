@@ -8,3 +8,6 @@ Metrics/BlockLength:
   IgnoredMethods: [ 'describe', 'context' ]
   Exclude:
     - 'db/seeds.rb'
+Style/Documentation:
+  Exclude:
+    - 'app/controllers/*'
