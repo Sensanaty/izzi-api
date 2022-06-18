@@ -13,6 +13,10 @@ RSpec.describe User, type: :model do
       end
 
       context 'password' do
+        it 'should have secure password' do
+          should have_secure_password
+        end
+
         it 'is present' do
           should validate_presence_of(:password)
         end
@@ -38,10 +42,6 @@ RSpec.describe User, type: :model do
         should validate_presence_of(:email)
       end
     end
-  end
-
-  it 'should have a password' do
-    should have_secure_password
   end
 
   it 'should be able to be an admin' do
