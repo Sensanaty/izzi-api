@@ -6,3 +6,5 @@ AllCops:
     - 'db/schema.rb'
 Metrics/BlockLength:
   IgnoredMethods: [ 'describe', 'context' ]
+  Exclude:
+    - 'db/seeds.rb'
