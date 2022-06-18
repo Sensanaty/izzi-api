@@ -16,23 +16,16 @@ gem 'puma', '~> 5.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'bootsnap', require: false
+gem 'jsonapi-serializer'
 gem 'rack-cors'
 
-group :development, :test do
+group :development do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-
-  gem 'factory_bot_rails'
-  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master', require: false
-  gem 'rspec-rails', '~> 6.0.0.rc1'
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master', require: false
 end
 
 group :development do
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'spring'
-end
-
-group :test do
-  gem 'shoulda-matchers'
-  gem 'simplecov', require: false
 end
