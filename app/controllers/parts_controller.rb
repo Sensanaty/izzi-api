@@ -2,9 +2,10 @@
 
 class PartsController < ApplicationController
   def index
-    parts = Part.all
+    @pagy, @parts = pagy(Part.all, items: params[:count] || 25)
+    @metadata = pagy_metadata(@pagy)
 
-    render json: PartSerializer.new(parts).serializable_hash.to_json, status: :ok
+    render 'parts/index', status: :ok
   end
 
 end

@@ -1,0 +1,10 @@
+metadata = {
+  **@metadata,
+  total: @pagy.count,
+  count: @parts.count
+}
+
+{
+  data: @parts,
+  metadata:
+}
