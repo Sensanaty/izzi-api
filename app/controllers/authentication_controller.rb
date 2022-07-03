@@ -7,9 +7,15 @@ class AuthenticationController < ApplicationController
     @user = User.find_by_username(user_params[:username])
 
     if @user&.authenticate(user_params[:password])
-      expiry = user_params[:remember] ? current_time + 7.days.from_now : 60.minutes.from_now
+      expiry = if user_params[:expiry]
+                 user_params[:expiry] + DateTime.now.to_i
+               elsif user_params[:remember]
+                 DateTime.now + 7.days
+               else
+                 60.minutes.from_now.to_i
+               end
 
-      token = encode({ user_id: @user.id }, expiry)
+      token = encode({ user_id: @user.id }, expiry.to_i)
 
       render json: { token: }, status: :ok
     else
@@ -28,6 +34,6 @@ class AuthenticationController < ApplicationController
   private
 
   def user_params
-    params.require(:data).permit(:username, :email, :password, :remember)
+    params.require(:data).permit(:username, :email, :password, :remember, :expiry)
   end
 end
