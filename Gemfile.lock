@@ -93,6 +93,7 @@ GEM
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
+    jb (0.8.0)
     jsonapi-serializer (2.2.0)
       activesupport (>= 4.2)
     jwt (2.4.1)
@@ -123,6 +124,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.6-arm64-darwin)
       racc (~> 1.4)
+    pagy (5.10.1)
+      activesupport
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
@@ -202,8 +205,10 @@ DEPENDENCIES
   bootsnap
   debug
   faker!
+  jb
   jsonapi-serializer
   jwt
+  pagy (~> 5.10)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
