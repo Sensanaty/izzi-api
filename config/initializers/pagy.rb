@@ -16,7 +16,7 @@ Pagy::DEFAULT[:size] = [1, 5, 5, 1]
 require 'pagy/extras/headers'
 require 'pagy/extras/metadata'
 # For performance reasons, you should explicitly set ONLY the metadata you use in the frontend
-Pagy::DEFAULT[:metadata] = [:page, :prev, :next, :last]
+Pagy::DEFAULT[:metadata] = %i[page prev next last from to]
 
 # Trim extra: Remove the page=1 param from links
 # See https://ddnexus.github.io/pagy/extras/trim
