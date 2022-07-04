@@ -5,7 +5,7 @@ metadata = {
 
 parts = @parts.map do |part|
   part.attributes.merge(
-    company: part.company.name
+    company_name: part.company.name
   )
 end
 
