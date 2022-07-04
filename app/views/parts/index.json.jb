@@ -1,10 +1,16 @@
 metadata = {
   **@metadata,
-  total: @pagy.count,
-  count: @parts.count
+  count: @parts.length
 }
 
+parts = @parts.map do |part|
+  part.attributes.merge(
+    company: part.company.name
+  )
+end
+
 {
-  data: @parts,
-  metadata:
+  data: parts,
+  metadata:,
+  token: @new_token
 }

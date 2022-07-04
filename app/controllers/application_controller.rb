@@ -25,7 +25,7 @@ class ApplicationController < ActionController::API
   end
 
   def generate_new_token(expiry, user_id, current_time)
-    @new_token = encode({ user_id: }) if current_time + 10.minutes.to_i > expiry
+    encode({ user_id: }) if current_time + 10.minutes.to_i > expiry
   end
 
   def authenticate_request
@@ -33,10 +33,10 @@ class ApplicationController < ActionController::API
     current_time = DateTime.now.to_i
 
     if current_time < decoded_token[:expiry]
-      generate_new_token(decoded_token[:expiry], decoded_token[:user_id], current_time)
+      @new_token = generate_new_token(decoded_token[:expiry], decoded_token[:user_id], current_time)
       @current_user = User.find(decoded_token[:user_id])
     else
-      render json: { error: 'Auth token expired, please login again' }, status: :unauthorized
+      render json: { error: 'Authorization token expired, please login again' }, status: :unauthorized
     end
   end
 end
