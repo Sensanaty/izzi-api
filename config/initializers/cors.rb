@@ -17,7 +17,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 
   allow do
-    origins(%r{(https://)(.*invois.me)})
+    origins(%r{(https://)(.*izzicup.net)})
 
     resource '*',
              headers: :any,
