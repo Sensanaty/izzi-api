@@ -1,6 +1,6 @@
 metadata = {
   **@metadata,
-  count: @parts.length
+  count: @pagy.count
 }
 
 parts = @parts.map do |part|

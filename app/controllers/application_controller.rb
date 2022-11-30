@@ -36,7 +36,7 @@ class ApplicationController < ActionController::API
       @new_token = generate_new_token(decoded_token[:expiry], decoded_token[:user_id], current_time)
       @current_user = User.find(decoded_token[:user_id])
     else
-      render json: { error: 'Authorization token expired, please login again' }, status: :unauthorized
+      render json: { error: 'Login token expired, please login again' }, status: :unauthorized
     end
   end
 end
