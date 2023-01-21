@@ -17,7 +17,7 @@ class AuthenticationController < ApplicationController
 
       token = encode({ user_id: @user.id }, expiry.to_i)
 
-      render json: { user: @user.as_json.except('password_digest'), token: }, status: :ok
+      render json: { user: @user.as_json.except('password_digest', 'updated_at', 'created_at'), token: }, status: :ok
     else
       render json: { error: 'Wrong username or email, please try again' }, status: :unauthorized
     end
