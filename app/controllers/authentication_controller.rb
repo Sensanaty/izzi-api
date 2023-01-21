@@ -4,7 +4,7 @@ class AuthenticationController < ApplicationController
   skip_before_action :authenticate_request, only: [:login]
 
   def login
-    @user = User.find_by_username(user_params[:username])
+    @user = User.find_by_username(user_params[:username].downcase)
 
     if @user&.authenticate(user_params[:password])
       expiry = if user_params[:expiry]
