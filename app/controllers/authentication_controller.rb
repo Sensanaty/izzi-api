@@ -23,6 +23,8 @@ class AuthenticationController < ApplicationController
     end
   end
 
+  def authenticate; end
+
   private
 
   def user_params
