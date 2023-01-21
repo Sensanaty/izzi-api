@@ -21,7 +21,13 @@ class AuthenticationController < ApplicationController
     end
   end
 
-  def authenticate; end
+  def authenticate
+    if @new_token
+      render json: { token: @new_token }, status: :ok
+    else
+      head :no_content
+    end
+  end
 
   private
 

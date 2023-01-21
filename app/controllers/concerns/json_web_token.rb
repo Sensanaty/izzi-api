@@ -14,7 +14,9 @@ module JsonWebToken
   end
 
   def decode(token)
-    render json: { message: 'No authorization token found in request header' }, status: :unauthorized unless token
+    unless token
+      render json: { message: 'No authorization token found in request header' }, status: :unauthorized and return
+    end
 
     decoded = JWT.decode(token, SECRET_KEY)[0]
 
