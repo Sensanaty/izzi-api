@@ -17,7 +17,7 @@ class AuthenticationController < ApplicationController
 
       token = encode({ user_id: @user.id }, expiry.to_i)
 
-      render json: { token: }, status: :ok
+      render json: { user: @user.as_json.except('password_digest'), token: }, status: :ok
     else
       render json: { error: 'Wrong username or email, please try again' }, status: :unauthorized
     end
@@ -28,6 +28,6 @@ class AuthenticationController < ApplicationController
   private
 
   def user_params
-    params.require(:data).permit(:username, :email, :password, :remember, :expiry)
+    params.permit(:username, :email, :password, :remember, :expiry)
   end
 end
