@@ -18,7 +18,7 @@ class ApplicationController < ActionController::API
   private
 
   def auth_token
-    request.headers['Authorization']
+    request.headers['Authorization'].gsub(/Bearer/, '').strip
 
   rescue NoMethodError
     raise NoHeaderError
