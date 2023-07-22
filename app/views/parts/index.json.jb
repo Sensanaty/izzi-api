@@ -1,6 +1,7 @@
 metadata = {
   **@metadata,
-  count: @parts.length
+  count: @parts.length,
+  total: @length
 }
 
 parts = @parts.map do |part|

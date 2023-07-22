@@ -2,6 +2,7 @@
 
 class PartsController < ApplicationController
   def index
+    @length = Part.includes(:company).length
     @pagy, @parts = pagy(Part.includes(:company), items: params[:count] || 25)
     @metadata = pagy_metadata(@pagy)
 
