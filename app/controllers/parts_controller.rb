@@ -2,8 +2,14 @@
 
 class PartsController < ApplicationController
   def index
-    @length = Part.includes(:company).length
-    @pagy, @parts = pagy(Part.includes(:company), items: params[:count] || 25)
+    search = params[:query]
+
+    @length = Part
+              .where('part_number ILIKE ?', "%#{search}%")
+              .includes(:company)
+              .length
+
+    @pagy, @parts = pagy(Part.where('part_number ILIKE ?', "%#{search}%").includes(:company), items: params[:count] || 25)
     @metadata = pagy_metadata(@pagy)
 
     render 'parts/index', status: :ok
