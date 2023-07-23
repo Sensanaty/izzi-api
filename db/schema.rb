@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_23_104933) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_23_113015) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,14 +44,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_23_104933) do
     t.integer "reserved", default: 0, null: false
     t.integer "sold", default: 0, null: false
     t.string "condition", null: false
-    t.decimal "min_cost", precision: 15, scale: 3, default: "0.0"
-    t.decimal "min_price", precision: 15, scale: 3, default: "0.0"
+    t.decimal "min_cost", precision: 15, scale: 2, default: "0.0"
+    t.decimal "min_price", precision: 15, scale: 2, default: "0.0"
     t.integer "min_order", default: 0
-    t.decimal "med_cost", precision: 15, scale: 3, default: "0.0"
-    t.decimal "med_price", precision: 15, scale: 3, default: "0.0"
+    t.decimal "med_cost", precision: 15, scale: 2, default: "0.0"
+    t.decimal "med_price", precision: 15, scale: 2, default: "0.0"
     t.integer "med_order", default: 0
-    t.decimal "max_cost", precision: 15, scale: 3, default: "0.0"
-    t.decimal "max_price", precision: 15, scale: 3, default: "0.0"
+    t.decimal "max_cost", precision: 15, scale: 2, default: "0.0"
+    t.decimal "max_price", precision: 15, scale: 2, default: "0.0"
     t.integer "max_order", default: 0
     t.string "lead_time"
     t.string "quote_type"
