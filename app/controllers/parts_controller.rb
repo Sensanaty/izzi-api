@@ -18,6 +18,12 @@ class PartsController < ApplicationController
     render 'parts/index', status: :ok
   end
 
+  def show
+    @part = Part.includes(:company).find(params[:id])
+
+    render 'parts/show', status: :ok
+  end
+
   private
 
   def page_overflow

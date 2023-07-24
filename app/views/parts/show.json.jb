@@ -1,0 +1,8 @@
+part = @part
+
+part = part.attributes.merge(company_name: @part.company.name)
+
+{
+  data: part,
+  token: @new_token
+}
