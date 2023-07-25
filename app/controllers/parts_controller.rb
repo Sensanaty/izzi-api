@@ -78,7 +78,7 @@ class PartsController < ApplicationController
       :tag,
       :internal_note,
       :added,
-      :company_id
+      :company_id,
     )
   end
 end

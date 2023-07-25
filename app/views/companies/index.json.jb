@@ -1,0 +1,4 @@
+{
+  data: @companies,
+  token: @new_token
+}
