@@ -48,6 +48,8 @@ Company.all.each do |company|
       max_cost: rand(0.00..5000.99),
       max_price: rand(0.00..5000.99),
       max_order: rand(0..50),
+      lead_time: "#{rand(0..7)} DAYS",
+      quote_type: 'OUTRIGHT SALE',
       tag: Faker::Lorem.paragraph,
       company:
     )
