@@ -22,6 +22,17 @@ class PartsController < ApplicationController
     render 'parts/index', status: :ok
   end
 
+  def create
+    @part = Part.new(part_params)
+
+    if @part.save
+      @company_name = @part.company.name
+      render 'parts/show', status: :ok
+    else
+      render json: { error: @part.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
   def show
     @part = Part.includes(:company).find(params[:id])
 
