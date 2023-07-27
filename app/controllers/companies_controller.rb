@@ -44,6 +44,6 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.fetch(:company, {})
+    params.permit(:id, :name, :address, :city, :country, :website, :type, :subscription)
   end
 end
