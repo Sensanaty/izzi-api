@@ -20,10 +20,10 @@ gem 'jb'
 gem 'jsonapi-serializer'
 gem 'pagy', '~> 6.2'
 gem 'rack-cors'
+gem 'faker'
 
 group :development do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'faker', require: false
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'spring'
