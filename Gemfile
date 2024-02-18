@@ -28,3 +28,5 @@ group :development do
   gem 'rubocop-performance'
   gem 'spring'
 end
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
