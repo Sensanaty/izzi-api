@@ -29,6 +29,12 @@ class AuthenticationController < ApplicationController
     end
   end
 
+  def user
+    return unless @current_user
+
+    render json: { user: @current_user.as_json.except('password_digest', 'updated_at', 'created_at') }, status: :ok
+  end
+
   private
 
   def user_params
