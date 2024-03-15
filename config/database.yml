@@ -81,6 +81,8 @@ test:
 #
 production:
   <<: *default
-  database: izzi_api
-  username: izzi
-  password: <%= Rails.application.credentials.db.password %>
+  database: <%= Rails.application.credentials.prod_db.database %>
+  username: <%= Rails.application.credentials.prod_db.username %>
+  password: <%= Rails.application.credentials.prod_db.password %>
+  port: <%= Rails.application.credentials.prod_db.port %>
+  host: <%= Rails.application.credentials.prod_db.host %>
