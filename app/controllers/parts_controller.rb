@@ -7,8 +7,8 @@ class PartsController < ApplicationController
     search = params[:query]
 
     @length = Part
-              .where('part_number ILIKE ?', "%#{search}%")
               .includes(:company)
+              .where('part_number ILIKE ?', "%#{search}%")
               .length
 
     @pagy, @parts = pagy(
