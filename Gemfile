@@ -16,11 +16,12 @@ gem 'puma', '~> 6.4'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'bootsnap', require: false
+gem 'faker'
 gem 'jb'
 gem 'jsonapi-serializer'
+gem 'mailgun-ruby', '~>1.2.14'
 gem 'pagy', '~> 6.2'
 gem 'rack-cors'
-gem 'faker'
 
 group :development do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
@@ -29,4 +30,4 @@ group :development do
   gem 'spring'
 end
 
-gem "dockerfile-rails", ">= 1.6", :group => :development
+gem 'dockerfile-rails', '>= 1.6', :group => :development
