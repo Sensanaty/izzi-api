@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :parts, defaults: { format: :json }
   resources :companies, defaults: { format: :json }
   resources :clients, defaults: { format: :json }
+
+  post '/contact-us', to: 'form#create', defaults: { format: :json }
 end

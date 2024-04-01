@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+    <title>Contact Form Response</title>
+
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>The contact form on izzicup.net has received a new response.</h1>
+
+    <p>Name: <%= @name %></p>
+    <p>Email: <%= @email %></p>
+    <p>Message:</p>
+    <pre style="background: lightgray; font-family: monospace; width: fit-content; padding: 0.5rem;"><%= @message %></pre>
+  </body>
+</html>
