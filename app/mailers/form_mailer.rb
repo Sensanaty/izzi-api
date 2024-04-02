@@ -6,6 +6,6 @@ class FormMailer < ApplicationMailer
     @name = params[:name]
     @message = params[:message]
 
-    mail(to: 'salevic@lu-ka.me', subject: 'New response via contact form')
+    mail(to: 'izzicup@gmail.com', subject: 'New response via contact form')
   end
 end
