@@ -4,7 +4,9 @@ class FormController < ApplicationController
   skip_before_action :authenticate_request
 
   def create
-    FormMailer.with(params: form_params).contact_form.deliver_now
+    FormMailer.with(
+      { name: form_params[:name], email: form_params[:email], message: [form_params[:message]] }
+    ).contact_form.deliver_now
 
     head 200
   end
