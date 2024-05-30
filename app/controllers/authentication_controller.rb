@@ -10,7 +10,7 @@ class AuthenticationController < ApplicationController
       expiry = if user_params[:remember]
                  DateTime.now + 7.days
                else
-                 30.minutes.from_now.to_i
+                 DateTime.now + 1.days
                end
 
       token = encode({ user_id: @user.id }, expiry.to_i)

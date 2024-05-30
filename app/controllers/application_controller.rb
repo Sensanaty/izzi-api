@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
   include JsonWebToken
 
   rescue_from JWT::DecodeError do
-    render json: { error: 'Error decoding auth token, try logging in again' }, status: :unprocessable_entity
+    render json: { error: 'Error decoding auth token, try logging in again' }, status: :unauthorized
   end
 
   rescue_from NoHeaderError do
