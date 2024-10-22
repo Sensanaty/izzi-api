@@ -6,12 +6,12 @@ metadata = {
 
 parts = @parts.map do |part|
   part.attributes.merge(
-    company_name: part.company.name
+    company_name: part.company&.name || 'N\A'
   )
 end
 
 {
-  data: parts,
+  parts:,
   metadata:,
   token: @new_token
 }

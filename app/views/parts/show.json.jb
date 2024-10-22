@@ -1,6 +1,6 @@
 part = @part
 
-part = part.attributes.merge(company_name: @part.company.name || @company_name)
+part = part.attributes.merge(company_name: @part&.company&.name || @company_name || 'N\A')
 
 {
   data: part,
