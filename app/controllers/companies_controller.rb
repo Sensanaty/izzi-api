@@ -21,7 +21,7 @@ class CompaniesController < ApplicationController
     if @company.save
       render json: @company, status: :created, location: @company
     else
-      render json: @company.errors, status: :unprocessable_entity
+      render json: { error: @company.errors }, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class CompaniesController < ApplicationController
     if @company.update(company_params)
       render json: @company
     else
-      render json: @company.errors, status: :unprocessable_entity
+      render json: { error: @company.errors.full_messages.to_sentence }, status: :unprocessable_entity
     end
   end
 
