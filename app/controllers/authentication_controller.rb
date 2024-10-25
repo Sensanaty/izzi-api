@@ -7,12 +7,7 @@ class AuthenticationController < ApplicationController
     @user = User.find_by_username(user_params[:username].downcase)
 
     if @user&.authenticate(user_params[:password])
-      expiry = if user_params[:remember]
-                 DateTime.now + 7.days
-               else
-                 DateTime.now + 1.days
-               end
-
+      expiry = DateTime.now + 7.days
       token = encode({ user_id: @user.id }, expiry.to_i)
 
       render json: { user: @user.as_json.except('password_digest', 'updated_at', 'created_at'), token: }, status: :ok

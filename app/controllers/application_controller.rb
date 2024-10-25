@@ -25,7 +25,7 @@ class ApplicationController < ActionController::API
   end
 
   def generate_new_token(expiry, user_id, current_time)
-    encode({ user_id: }) if current_time + 10.minutes.to_i > expiry
+    encode({ user_id: }) if current_time + 1.hours.to_i > expiry
   end
 
   def authenticate_request
