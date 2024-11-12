@@ -11,7 +11,7 @@ parts = @parts.map do |part|
 end
 
 {
-  parts:,
+  data: parts,
   metadata:,
   token: @new_token
 }

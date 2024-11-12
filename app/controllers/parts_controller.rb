@@ -15,7 +15,7 @@ class PartsController < ApplicationController
       Part
         .order(updated_at: :desc)
         .where('part_number ILIKE ?', "%#{search}%")
-        .includes(:company), items: params[:count] || 25
+        .includes(:company), limit: params[:count]
     )
     @metadata = pagy_metadata(@pagy)
 

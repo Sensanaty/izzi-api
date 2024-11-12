@@ -4,11 +4,7 @@
 
 # Instance variables
 # See https://ddnexus.github.io/pagy/api/pagy#instance-variables
-Pagy::DEFAULT[:items] = 25
-
-# Other Variables
-# See https://ddnexus.github.io/pagy/api/pagy#other-variables
-Pagy::DEFAULT[:size] = [1, 5, 5, 1]
+Pagy::DEFAULT[:limit] = 20
 
 # Metadata extra: Provides the pagination metadata to Javascript frameworks like Vue.js, react.js, etc.
 # See https://ddnexus.github.io/pagy/extras/metadata
