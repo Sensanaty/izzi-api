@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Part < ApplicationRecord
+  has_paper_trail
+
   belongs_to :company, dependent: :destroy
 
   enum quote_type: {

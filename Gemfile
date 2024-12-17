@@ -10,6 +10,7 @@ gem 'rails', '~> 7.1.2'
 
 gem 'bcrypt', '~> 3.1'
 gem 'jwt'
+gem 'paper_trail'
 gem 'puma', '~> 6.4'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

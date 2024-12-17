@@ -150,6 +150,9 @@ GEM
     nokogiri (1.16.0-x86_64-linux)
       racc (~> 1.4)
     pagy (9.2.2)
+    paper_trail (16.0.0)
+      activerecord (>= 6.1)
+      request_store (~> 1.4)
     parallel (1.24.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -206,6 +209,8 @@ GEM
     regexp_parser (2.8.3)
     reline (0.4.1)
       io-console (~> 0.5)
+    request_store (1.7.0)
+      rack (>= 1.4)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -260,6 +265,7 @@ DEPENDENCIES
   jwt
   mailgun-ruby (~> 1.2.14)
   pagy (~> 9.2)
+  paper_trail
   pg (~> 1.5)
   puma (~> 6.4)
   rack-cors
