@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Part < ApplicationRecord
-  has_paper_trail
+  has_paper_trail limit: 4
 
   belongs_to :company, dependent: :destroy
 
