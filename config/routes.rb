@@ -6,7 +6,14 @@ Rails.application.routes.draw do
   get '/auth/user', to: 'authentication#user', default: { format: :json }
 
   resources :users, except: [:index], defaults: { format: :json }
-  resources :parts, defaults: { format: :json }
+
+  resources :parts, defaults: { format: :json } do
+    member do
+      get :versions
+      delete :versions, action: :delete_versions
+    end
+  end
+
   resources :companies, defaults: { format: :json }
   resources :clients, defaults: { format: :json }
 

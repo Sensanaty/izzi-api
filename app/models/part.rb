@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class Part < ApplicationRecord
-  has_paper_trail limit: 10
-
   belongs_to :company, dependent: :destroy
+
+  has_paper_trail limit: 10
 
   enum quote_type: {
     outright_sale: 'OUTRIGHT SALE',

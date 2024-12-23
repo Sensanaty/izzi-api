@@ -1,0 +1,4 @@
+{
+  data: @versions,
+  token: @new_token
+}
