@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= Rails.application.credentials.prod_db.url %>
   database: <%= Rails.application.credentials.prod_db.database %>
   username: <%= Rails.application.credentials.prod_db.username %>
   password: <%= Rails.application.credentials.prod_db.password %>
