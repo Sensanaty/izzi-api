@@ -4,9 +4,7 @@ class CompaniesController < ApplicationController
   before_action :set_company, only: %i[show update destroy]
 
   def index
-    search = params[:query]
-
-    @companies = Company.order(updated_at: :desc).where('name ILIKE ?', "%#{search}%").all
+    @companies = Company.all.order(parts_count: :desc)
 
     render 'companies/index', status: :ok
   end
