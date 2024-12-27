@@ -82,7 +82,5 @@ test:
 production:
   <<: *default
   url: <%= ENV["DB_URL"] || Rails.application.credentials.prod_db.url %>
-  database: <%= ENV["DB_NAME"] || Rails.application.credentials.prod_db.name %>
   username: <%= ENV["DB_USERNAME"] || Rails.application.credentials.prod_db.username %>
   password: <%= ENV["DB_PASSWORD"] || Rails.application.credentials.prod_db.password %>
-  port: <%= ENV["DB_PORT"] || Rails.application.credentials.prod_db.port %>
