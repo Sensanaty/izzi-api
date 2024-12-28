@@ -35,6 +35,12 @@ class CompaniesController < ApplicationController
     @company.destroy
   end
 
+  def parts
+    @company = Company.includes(:parts).find(params[:id])
+
+    render json: @company.parts, status: :ok
+  end
+
   private
 
   def set_company

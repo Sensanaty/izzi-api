@@ -14,7 +14,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :companies, defaults: { format: :json }
+  resources :companies, defaults: { format: :json } do
+    member do
+      get :parts, action: :parts
+    end
+  end
   resources :clients, defaults: { format: :json }
 
   post '/contact-us', to: 'form#create', defaults: { format: :json }
