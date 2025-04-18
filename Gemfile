@@ -22,6 +22,7 @@ gem 'jb'
 gem 'jsonapi-serializer'
 gem 'mailgun-ruby', '~>1.2.14'
 gem 'pagy', '~> 9.2'
+gem 'rack-brotli'
 gem 'rack-cors'
 
 group :development do

@@ -3,6 +3,8 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'rack'
+require 'rack/brotli'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -28,5 +30,8 @@ module IzziApi
     config.api_only = true
 
     config.action_controller.always_permitted_parameters = %w( controller action format )
+
+    config.middleware.use Rack::Deflater
+    config.middleware.use Rack::Brotli, quality: 11
   end
 end
