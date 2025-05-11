@@ -38,7 +38,10 @@ class CompaniesController < ApplicationController
   def parts
     @company = Company.find(params[:id])
     # noinspection RubyArgCount
-    limited_parts = @company.parts.select(:id, :part_number, :description).limit(100)
+    limited_parts = @company.parts
+                            .select(:id, :part_number, :description, :tag)
+                            .order(updated_at: :desc)
+                            .limit(100)
 
     render json: limited_parts, status: :ok
   end
