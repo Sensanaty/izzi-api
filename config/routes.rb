@@ -12,6 +12,10 @@ Rails.application.routes.draw do
       get :versions
       delete :versions, action: :delete_versions
     end
+
+    collection do
+      get :export
+    end
   end
 
   resources :companies, defaults: { format: :json } do
