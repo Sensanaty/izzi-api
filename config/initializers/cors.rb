@@ -13,7 +13,8 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 
     resource '*',
              headers: :any,
-             methods: %i[get post put patch delete options head]
+             methods: %i[get post put patch delete options head],
+             expose: %w[Content-Disposition Content-Type Content-Length]
   end
 
   allow do
@@ -21,7 +22,8 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 
     resource '*',
              headers: :any,
-             methods: %i[get post put patch delete options head]
+             methods: %i[get post put patch delete options head],
+             expose: %w[Content-Disposition Content-Type Content-Length]
   end
 
   allow do
@@ -29,7 +31,8 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 
     resource '*',
              headers: :any,
-             methods: %i[get post put patch delete options head]
+             methods: %i[get post put patch delete options head],
+             expose: %w[Content-Disposition Content-Type Content-Length]
   end
 
   allow do
@@ -37,6 +40,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 
     resource '*',
              headers: :any,
-             methods: %i[get post put patch delete options head]
+             methods: %i[get post put patch delete options head],
+             expose: %w[Content-Disposition Content-Type Content-Length]
   end
 end
