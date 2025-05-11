@@ -77,7 +77,7 @@ class PartsController < ApplicationController
   end
 
   def export
-    @parts = Part.all.limit(1000).includes(:company)
+    @parts = Part.all.includes(:company)
 
     export_csv(@parts)
   end
