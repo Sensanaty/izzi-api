@@ -21,9 +21,9 @@ class PartsController < ApplicationController
 
   def versions
     part = Part.find(params[:id])
-    versions_data = part.versions.reverse
+    versions_data = part.versions.order(created_at: :desc)
 
-    company_ids = versions_data.map { |version| version.object['company_id'] }.uniq
+    company_ids = versions_data.map { |version| version.object['company_id'] }.compact.uniq
     # Fetch all relevant companies in one query
     companies = Company.where(id: company_ids).index_by(&:id)
 
