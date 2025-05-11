@@ -36,9 +36,11 @@ class CompaniesController < ApplicationController
   end
 
   def parts
-    @company = Company.includes(:parts).find(params[:id])
+    @company = Company.find(params[:id])
+    # noinspection RubyArgCount
+    limited_parts = @company.parts.select(:id, :part_number, :description).limit(100)
 
-    render json: @company.parts, status: :ok
+    render json: limited_parts, status: :ok
   end
 
   private
