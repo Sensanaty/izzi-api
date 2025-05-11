@@ -4,18 +4,15 @@ class PartsController < ApplicationController
   rescue_from Pagy::OverflowError, with: :page_overflow
 
   def index
-    search = params[:query]
+    search = params[:query] || ''
 
-    @length = Part
-              .includes(:company)
-              .where('part_number ILIKE ?', "%#{search}%")
-              .length
+    query = Part.where('part_number ILIKE ?', "%#{search}%")
+
+    @length = query.count
 
     @pagy, @parts = pagy(
-      Part
-        .order(updated_at: :desc)
-        .where('part_number ILIKE ?', "%#{search}%")
-        .includes(:company), limit: params[:count]
+      query.includes(:company).order(updated_at: :desc),
+      items: params[:count] || 20
     )
     @metadata = pagy_metadata(@pagy)
 
