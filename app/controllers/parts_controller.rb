@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class PartsController < ApplicationController
+  include CsvExportable
+
   rescue_from Pagy::OverflowError, with: :page_overflow
 
   def index
@@ -72,6 +74,12 @@ class PartsController < ApplicationController
     else
       render json: { error: @part.errors.full_messages }, status: :unprocessable_entity
     end
+  end
+
+  def export
+    @parts = Part.all.limit(1000).includes(:company)
+
+    export_csv(@parts)
   end
 
   private
